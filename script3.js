@@ -63,7 +63,7 @@ tl
     .to("#loader",{
         top:"-300%",
         delay:1.5,
-        duration:3,
+        duration:2,
         ease:"Power4.easeOut",
         
         
