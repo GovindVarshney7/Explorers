@@ -1,55 +1,76 @@
-let time=00;
-let tl= gsap.timeline();
-tl 
-    .from("#loader",{
-        onStart:
-        setInterval (function(){
-            if(time<=100){
-                document.querySelector('#loader h1').innerHTML= time++ +"%"; 
-                document.getElementById("loaderDiv").style.width = time*2.7 +"px";
-            } 
-        },50)
+let tl=gsap.timeline();
+
+tl
+    .from("#loader4",{
+        opacity:0,
+        onStart: function(){
+            $('#loader4').textillate({ 
+                in: { 
+                    effect: 'fadeInUp' ,
+                    callback:function(){
+                        $('#loader4').textillate('out');
+                    }
+                },
+                out:{ effect: 'fadeOutUp' }
+            
+            });
+        }
+    })
+    .from("#loader3",{
+        opacity:0,
+        delay:1,
+        onStart: function(){
+            $('#loader3').textillate({ 
+                in: { 
+                    effect: 'fadeInUp' ,
+                    callback:function(){
+                        $('#loader3').textillate('out');
+                    }
+                },
+                out:{ effect: 'fadeOutUp' }
+            
+            });
+        }
+    })
+    .from("#loader2",{
+        opacity:0,
+        delay:0.9,
+        onStart: function(){
+            $('#loader2').textillate({ 
+                in: { 
+                    effect: 'fadeInUp' ,
+                    callback:function(){
+                        $('#loader2').textillate('out');
+                    }
+                },
+                out:{ effect: 'fadeOutUp' }
+            
+            });
+        }
+    })
+    .from("#loader1",{
+        opacity:0,
+        delay:0.8,
+        onStart: function(){
+            $('#loader1').textillate({ 
+                in: { 
+                    effect: 'fadeInUp' ,
+                },
+            
+            });
+        }
     })
     .to("#loader",{
-        delay:6,
-        y:-100+"%",
-        duration:1,
+        top:"-300%",
+        delay:1.5,
+        duration:3,
+        ease:"Power4.easeOut",
+        
+        
     })
-    .from("#upLeft h3",{
-        opacity :0,
-        scale:0,
-    })
-    .from("#upMiddleA",{
-        opacity:0,
-        y:-100,
-        rotate:-90,
-        ease:"Power4.easeOut"
-    })
-    .from("#upMiddleB",{
-        opacity:0,
-        y:-100,
-        rotate:-90,
-        ease:"Power4.easeOut"
-    })
-    .from("#upMiddleC",{
-        opacity:0,
-        y:-100,
-        rotate:-90,
-        ease:"Power4.easeOut"
-    })
-    .from("#upMiddleD",{
-        opacity:0,
-        y:-100,
-        rotate:-90,
-        ease:"Power4.easeOut"
-    })
-    .from("#upRight",{
-        opacity:0,
-        y:-100,
-        rotate:-90,
-        ease:"Power4.easeOut"
-    })
-    
+
+
+
     .from(["#middleMiddleImg","#middleRight1Img"],{
         scale:0,
         rotate:360,
